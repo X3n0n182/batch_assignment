@@ -1,0 +1,99 @@
+:: This is a comment, type stuff here. This is format for each question
+:: CLS means clear screen
+:: ECHO. inserts an empty line
+@ECHO OFF
+ECHO HelloWorld
+ECHO.
+ECHO A1: Output a line to the screen that displays your name
+ECHO.
+ECHO --Using the ECHO command--
+ECHO The ECHO command displays text to the screen
+ECHO Harold Mandal
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A2: Create a folder on the root of the C: drive called "My Batch Script File Assignment"
+ECHO.
+ECHO --Using the MD command--
+ECHO The MD command makes a folder in your chosen drive
+MD C:\MyBatchScriptFileAssignment
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A3: Change into the "MyBatchScriptFileAssignment" folder
+ECHO.
+ECHO --Using the CD command--
+ECHO The CD command changes your directory to your chosen one, and CD by itself displays your current directory
+CD\MyBatchScriptFileAssignment
+CD
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A4: Create a folder within "MyBatchScriptFileAssignment" called "Input"
+ECHO.
+ECHO --Using the MD command--
+MD C:\MyBatchScriptFileAssignment\Input
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A5: Create another folder within "MyBatchScriptFileAssignment" called "Processing"
+ECHO.
+ECHO --Using the MD command--
+MD C:\MyBatchScriptFileAssignment\Processing
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A6: Create another folder within "MyBatchScriptFileAssignment" called "Output"
+ECHO.
+ECHO --Using the MD command--
+MD C:\MyBatchScriptFileAssignment\Output
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A7: List all hidden files in the root directory of the C: drive - output the listing to a file called
+ECHO "InputData.txt" in the "Input" subfolder.
+ECHO.
+ECHO --Using the DIR command--
+ECHO This command can display files or folders in a directory and can be shown in a text file
+ECHO /a allows you to also include hidden files.
+DIR /a C:\>C:\MyBatchScriptFileAssignment\Input\InputData.txt
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A8: Make a backup copy of InputData.txt on the root of the C: drive, and with the same name,
+ECHO but with extension ".bak".
+ECHO.
+ECHO --Using the COPY command--
+ECHO You can use this command to copy files into a specific location
+COPY C:\MyBatchScriptFileAssignment\Input\InputData.txt C:\
+ECHO.
+ECHO --Using the RENAME command--
+ECHO You can use this command to rename files
+RENAME C:\InputData.txt InputData.bak
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A9: Go to the root directory of the C: drive
+ECHO.
+ECHO --Using the CD command--
+CD\
+CD
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A10: Update the folder search path for batch script file execution to
+ECHO include the "Processing" subfolder, and then display the folder search path.
+ECHO.
+ECHO --Using the DIR command--
+DIR /d C:\MyBatchScriptFileAssignment\Processing
+ECHO.
+PAUSE
