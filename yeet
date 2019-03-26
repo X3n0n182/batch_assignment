@@ -2,7 +2,13 @@
 :: CLS means clear screen
 :: ECHO. inserts an empty line
 @ECHO OFF
-ECHO HelloWorld
+ECHO.
+ECHO Harold M's Batch Script Assignment
+ECHO Few notes:
+ECHO.
+ECHO - Sorry, for A8 to work this script needs to be ran as an Administrator
+ECHO - Made for Win 7
+PAUSE
 ECHO.
 ECHO A1: Output a line to the screen that displays your name
 ECHO.
@@ -97,3 +103,16 @@ ECHO --Using the DIR command--
 DIR /d C:\MyBatchScriptFileAssignment\Processing
 ECHO.
 PAUSE
+CLS
+ECHO.
+ECHO A11: Change the command prompt to include the time, the word 'Hello World' and the
+ECHO '>' character.
+ECHO.
+ECHO Using the  
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A12: Create a new command window, with red colored text and green background.
+ECHO.
+ECHO Using the
