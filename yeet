@@ -12,7 +12,7 @@ PAUSE
 ECHO.
 ECHO A1: Output a line to the screen that displays your name
 ECHO.
-ECHO --Using the ECHO command--
+ECHO --Command used: ECHO--
 ECHO The ECHO command displays text to the screen
 ECHO Harold Mandal
 ECHO.
@@ -21,7 +21,7 @@ CLS
 ECHO.
 ECHO A2: Create a folder on the root of the C: drive called "My Batch Script File Assignment"
 ECHO.
-ECHO --Using the MD command--
+ECHO --Command used: MD--
 ECHO The MD command makes a folder in your chosen drive
 MD C:\MyBatchScriptFileAssignment
 ECHO.
@@ -30,7 +30,7 @@ CLS
 ECHO.
 ECHO A3: Change into the "MyBatchScriptFileAssignment" folder
 ECHO.
-ECHO --Using the CD command--
+ECHO --Command used: CD--
 ECHO The CD command changes your directory to your chosen one, and CD by itself displays your current directory
 CD\MyBatchScriptFileAssignment
 CD
@@ -40,7 +40,7 @@ CLS
 ECHO.
 ECHO A4: Create a folder within "MyBatchScriptFileAssignment" called "Input"
 ECHO.
-ECHO --Using the MD command--
+ECHO --Command used: MD--
 MD C:\MyBatchScriptFileAssignment\Input
 ECHO.
 PAUSE
@@ -48,7 +48,7 @@ CLS
 ECHO.
 ECHO A5: Create another folder within "MyBatchScriptFileAssignment" called "Processing"
 ECHO.
-ECHO --Using the MD command--
+ECHO --Command used: MD--
 MD C:\MyBatchScriptFileAssignment\Processing
 ECHO.
 PAUSE
@@ -56,31 +56,31 @@ CLS
 ECHO.
 ECHO A6: Create another folder within "MyBatchScriptFileAssignment" called "Output"
 ECHO.
-ECHO --Using the MD command--
+ECHO --Command used: MD--
 MD C:\MyBatchScriptFileAssignment\Output
 ECHO.
 PAUSE
 CLS
 ECHO.
 ECHO A7: List all hidden files in the root directory of the C: drive - output the listing to a file called
-ECHO "InputData.txt" in the "Input" subfolder.
+ECHO "Input Data.txt" in the "Input" subfolder.
 ECHO.
-ECHO --Using the DIR command--
+ECHO --Commands used: DIR--
 ECHO This command can display files or folders in a directory and can be shown in a text file
 ECHO /a allows you to also include hidden files.
-DIR /a C:\>C:\MyBatchScriptFileAssignment\Input\InputData.txt
+DIR /a:h C:\>C:\MyBatchScriptFileAssignment\Input\InputData.txt
 ECHO.
 PAUSE
 CLS
 ECHO.
-ECHO A8: Make a backup copy of InputData.txt on the root of the C: drive, and with the same name,
+ECHO A8: Make a backup copy of Input Data.txt on the root of the C: drive, and with the same name,
 ECHO but with extension ".bak".
 ECHO.
-ECHO --Using the COPY command--
+ECHO --Command used: COPY--
 ECHO You can use this command to copy files into a specific location
 COPY C:\MyBatchScriptFileAssignment\Input\InputData.txt C:\
 ECHO.
-ECHO --Using the RENAME command--
+ECHO --Command used: RENAME--
 ECHO You can use this command to rename files
 RENAME C:\InputData.txt InputData.bak
 ECHO.
@@ -89,7 +89,7 @@ CLS
 ECHO.
 ECHO A9: Go to the root directory of the C: drive
 ECHO.
-ECHO --Using the CD command--
+ECHO --Command used: CD--
 CD\
 CD
 ECHO.
@@ -99,13 +99,15 @@ ECHO.
 ECHO A10: Update the folder search path for batch script file execution to
 ECHO include the "Processing" subfolder, and then display the folder search path.
 ECHO.
-ECHO --Using the DIR command--
-DIR /d C:\MyBatchScriptFileAssignment\Processing
+ECHO --Command used: PATH--
+ECHO PATH sets a search path for executable files
+PATH=%PATH%;C:\MyBatchScriptFileAssignment\Processing
+PATH
 ECHO.
 PAUSE
 CLS
 ECHO.
-ECHO A11: Change the command prompt to include the time, the word 'Hello World' and the
+ECHO NOT DONE A11: Change the command prompt to include the time, the word 'Hello World' and the
 ECHO '>' character.
 ECHO.
 ECHO Using the  
@@ -115,4 +117,57 @@ CLS
 ECHO.
 ECHO A12: Create a new command window, with red colored text and green background.
 ECHO.
-ECHO Using the
+ECHO --Commands used: CMD, START, COLOR--
+ECHO Using the start command lets you start a new command window and carry out the script in the quotation marks
+ECHO in the same line
+START CMD.EXE /k "color 24"
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A13: Create another new command window with blue colored text and a bright white background,
+ECHO and with a prompt that includes the Windows version number.
+ECHO.
+ECHO --Commands used: CMD, START, COLOR, winver--
+START CMD.EXE /k "color f1 && wmic os get version"
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO NOT DONE A14: List all the folders in C:\WINDOWS\System32 sorted in alphabetical order - output the
+ECHO listing into a file called "Batch Script Output Data.txt in the "Output" subfolder.
+ECHO.
+ECHO --Commands used: DIR, SORT--
+ECHO SORT command allows sorting of file contents or files themselves.
+DIR /a:d C:\Windows\System32>C:\MyBatchScriptFileAssignment\Output\BatchScriptFileOutputData.txt
+ECHO.
+SORT C:\MyBatchScriptFileAssignment\Output\BatchScriptFileOutputData.txt
+ECHO.
+ECHO In BatchScriptFileOutputData.txt it will be in alphabetical order.
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO NOT DONE A15: List all text files whose names are up to seven characters long on the whole C: drive -
+ECHO making the listing output in wide format - the listing output must be appended to the end
+ECHO of "BatchScriptFileOutputData.txt"
+ECHO.
+ECHO --Commands used: DIR--
+ECHO The * is a wildcard, it lets you search for files with the extension in front of it and the ? specifies
+ECHO an unknown character in the name. So you can use this to find files with a specific number of characters in
+ECHO their names. In this case it's up to seven. Two greater-than symbols appends the results.
+DIR C:\???????*.txt/w /o /s /p >>C:\MyBatchScriptFileAssignment\Output\BatchScriptFileOutputData.txt
+ECHO.
+PAUSE
+CLS
+ECHO.
+ECHO A16: Delete folder "MyBatchScriptFileAssignment" with all subfolders and contents.
+ECHO --Commands used: rmdir--
+ECHO rmdir deletes what you specify and /s allows you to delete inner contents.
+RMDIR /s C:\MyBatchScriptFileAssignment
+ECHO.
+PAUSE
+CLS
+ECHO.
+
+
