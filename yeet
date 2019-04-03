@@ -93,12 +93,13 @@ PATH
 ECHO.
 PAUSE
 CLS
-ECHO NOT DONE A11: Change the command prompt to include the time, the word 'Hello World' and the ^> character.
+ECHO A11: Change the command prompt to include the time, the word 'Hello World' and the ^> character.
 ECHO.
 ECHO --Commands used: t, $g and ECHO--
-ECHO ^$g puts the greater-than sign in front of the prompt so it can be used as normal and ^/t displays time
+ECHO ^$g puts the greater-than sign in front of the prompt so it can be used as normal and ^/t displays time.
+@ECHO ON
 PROMPT $t Hello World$g
-::
+@ECHO OFF
 ECHO.
 PAUSE
 CLS
@@ -134,7 +135,7 @@ ECHO In BatchScriptFileOutputData.txt it will be in alphabetical order.
 ECHO.
 PAUSE
 CLS
-ECHO NOT DONE A15: List all text files whose names are up to seven characters long on the whole C: drive -
+ECHO A15: List all text files whose names are up to seven characters long on the whole C: drive -
 ECHO making the listing output in wide format - the listing output must be appended to the end
 ECHO of "BatchScriptFileOutputData.txt"
 ECHO.
@@ -162,7 +163,6 @@ ECHO add Bob to it.
 ECHO.
 ECHO --Commands used:  --
 net user Bob /add
-net localgroup Awesome Users /add
 net localgroup Awesome Users Bob /add
 ECHO.
 PAUSE
@@ -175,6 +175,8 @@ PAUSE
 CLS
 ECHO NOT DONE A20: Create a task to be scheduled at 10 pm every Sunday that will check the C disk for errors
 ECHO and write the results to a file called "chkdskResults.txt" on the desktop.
+ECHO.
+ECHO --Commands used: --
 ECHO.
 PAUSE
 CLS
