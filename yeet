@@ -163,12 +163,12 @@ ECHO add Bob to it.
 ECHO.
 ECHO --Commands used:  --
 net user Bob /add
-net localgroup Awesome Users Bob /add
+net localgroup AwesomeUsers Bob /add
 ECHO.
 PAUSE
 CLS
 ECHO NOT DONE A19: Delete the group "Awesome Users" and delete the user "Bob"
-net localgroup Awesome Users /del
+net localgroup AwesomeUsers /del
 net user Bob /del
 ECHO.
 PAUSE
