@@ -1,11 +1,8 @@
-:: This is a comment, type stuff here. This is format for each question
-:: CLS means clear screen
-:: ECHO. inserts an empty line
+:: MAIN.bat
+:: The purpose of this script is to demonstrate various basic commands in batch scripting.
+:: Harold Mandal - 1000056132
+:: Platforms & Devices, 2019 Semester 1, Stream A
 @ECHO OFF
-ECHO.
-ECHO Harold M's Batch Script Assignment
-PAUSE
-CLS
 ECHO A1: Output a line to the screen that displays your name
 ECHO.
 ECHO --Command used: ECHO--
@@ -142,7 +139,7 @@ ECHO.
 ECHO --Commands used: DIR, /w, ^?--
 ECHO The ^? specifies the amount of characters to search for, /w is the wide format.
 CD C:\
-DIR C:???????.txt /w /s /o:n >>C:\MyBatchScriptFileAssignment\Output\BatchScriptFileOutputData.txt
+::DIR C:???????.txt /w /s /o:n >>C:\MyBatchScriptFileAssignment\Output\BatchScriptFileOutputData.txt
 ECHO.
 PAUSE
 CLS
@@ -158,17 +155,21 @@ ipconfig
 ECHO.
 PAUSE
 CLS
-ECHO NOT DONE A18: Create a local user called "Bob", then create a local group called "Awesome Users" and
+ECHO A18: Create a local user called "Bob", then create a local group called "Awesome Users" and
 ECHO add Bob to it.
 ECHO.
-ECHO --Commands used:  --
+ECHO --Commands used: net user, net localgroup--
+ECHO net user and localgroup gives you the power to add local users and groups to your currently logged in account
 net user Bob /add
-net localgroup AwesomeUsers Bob /add
+net localgroup "Awesome Users" /add
+net localgroup "Awesome Users" Bob /add
 ECHO.
 PAUSE
 CLS
-ECHO NOT DONE A19: Delete the group "Awesome Users" and delete the user "Bob"
-net localgroup AwesomeUsers /del
+ECHO A19: Delete the group "Awesome Users" and delete the user "Bob"
+ECHO --Commands used: /del--
+ECHO Lets you delete local users/groups
+net localgroup "Awesome Users" /del
 net user Bob /del
 ECHO.
 PAUSE
@@ -176,7 +177,9 @@ CLS
 ECHO NOT DONE A20: Create a task to be scheduled at 10 pm every Sunday that will check the C disk for errors
 ECHO and write the results to a file called "chkdskResults.txt" on the desktop.
 ECHO.
-ECHO --Commands used: --
+ECHO --Commands used: SchTasks--
+ECHO This is for
+SCHTASKS /create /sc WEEKLY /d SUN /tn "Checking Disk" /ru "SYSTEM" /tr CMD Chkdsk C: > C:\Users\%USERNAME%\Desktop\chkdskResults.txt /st 22:00
 ECHO.
 PAUSE
 CLS
