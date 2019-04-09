@@ -179,7 +179,8 @@ ECHO and write the results to a file called "chkdskResults.txt" on the desktop.
 ECHO.
 ECHO --Commands used: SchTasks--
 ECHO This is for
-SCHTASKS /create /sc WEEKLY /d SUN /tn "Checking Disk" /ru "SYSTEM" /tr CMD Chkdsk C: > C:\Users\%USERNAME%\Desktop\chkdskResults.txt /st 22:00
+::SCHTASKS /create /sc WEEKLY /d TUE /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe" >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt /st 16: /F
+SCHTASKS /create /sc WEEKLY /d SUN /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 22:00 /F
 ECHO.
 PAUSE
 CLS
