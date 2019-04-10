@@ -178,7 +178,8 @@ ECHO NOT DONE A20: Create a task to be scheduled at 10 pm every Sunday that will
 ECHO and write the results to a file called "chkdskResults.txt" on the desktop.
 ECHO.
 ECHO --Commands used: SchTasks--
-ECHO This is for
+ECHO SCHTASKS allows you to schedule tasks, you need commands such as tn (taskname), tr (taskrun), st (start time) and sc (schedule).
+ECHO /f allows the task to be overwritten to make a new one automatically when I test it.
 ::SCHTASKS /create /sc WEEKLY /d TUE /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe" >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt /st 16: /F
 SCHTASKS /create /sc WEEKLY /d SUN /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 22:00 /F
 ECHO.
