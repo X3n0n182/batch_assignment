@@ -1,8 +1,13 @@
 :: MAIN.bat
-:: The purpose of this script is to demonstrate various basic commands in batch scripting.
+:: The purpose of this script is to demonstrate the student's knowledge in various basic commands in batch scripting.
 :: Harold Mandal - 1000056132
 :: Platforms & Devices, 2019 Semester 1, Stream A
 @ECHO OFF
+ECHO %~nx0
+::The command above displays filename with the extension
+ECHO.
+PAUSE
+CLS
 ECHO A1: Output a line to the screen that displays your name
 ECHO.
 ECHO --Command used: ECHO--
@@ -139,7 +144,7 @@ ECHO.
 ECHO --Commands used: DIR, /w, ^?--
 ECHO The ^? specifies the amount of characters to search for, /w is the wide format.
 CD C:\
-::DIR C:???????.txt /w /s /o:n >>C:\MyBatchScriptFileAssignment\Output\BatchScriptFileOutputData.txt
+DIR C:???????.txt /w /s /o:n >>C:\MyBatchScriptFileAssignment\Output\BatchScriptFileOutputData.txt
 ECHO.
 PAUSE
 CLS
@@ -174,14 +179,15 @@ net user Bob /del
 ECHO.
 PAUSE
 CLS
-ECHO NOT DONE A20: Create a task to be scheduled at 10 pm every Sunday that will check the C disk for errors
+ECHO A20: Create a task to be scheduled at 10 pm every Sunday that will check the C disk for errors
 ECHO and write the results to a file called "chkdskResults.txt" on the desktop.
 ECHO.
 ECHO --Commands used: SchTasks--
 ECHO SCHTASKS allows you to schedule tasks, you need commands such as tn (taskname), tr (taskrun), st (start time) and sc (schedule).
 ECHO /f allows the task to be overwritten to make a new one automatically when I test it.
-SCHTASKS /create /sc WEEKLY /d THU /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 08:31 /F
-::SCHTASKS /create /sc WEEKLY /d SUN /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 22:00 /F
+::The command below is what I used to ensure it works properly when it runs.
+::SCHTASKS /create /sc WEEKLY /d THU /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 08:31 /F
+SCHTASKS /create /sc WEEKLY /d SUN /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 22:00 /F
 ECHO.
 PAUSE
 CLS
