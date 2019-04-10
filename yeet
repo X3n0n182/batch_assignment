@@ -180,8 +180,8 @@ ECHO.
 ECHO --Commands used: SchTasks--
 ECHO SCHTASKS allows you to schedule tasks, you need commands such as tn (taskname), tr (taskrun), st (start time) and sc (schedule).
 ECHO /f allows the task to be overwritten to make a new one automatically when I test it.
-::SCHTASKS /create /sc WEEKLY /d TUE /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe" >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt /st 16: /F
-SCHTASKS /create /sc WEEKLY /d SUN /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 22:00 /F
+SCHTASKS /create /sc WEEKLY /d THU /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 08:31 /F
+::SCHTASKS /create /sc WEEKLY /d SUN /tn "CHECKDISK" /ru "SYSTEM" /tr "CMD /C C:\Windows\System32\chkdsk.exe >> C:\Users\%USERNAME%\Desktop\chkdskResults.txt" /st 22:00 /F
 ECHO.
 PAUSE
 CLS
